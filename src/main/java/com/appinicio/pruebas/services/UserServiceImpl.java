@@ -1,19 +1,27 @@
-package com.appinicio.pruebas.user;
+package com.appinicio.pruebas.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.appinicio.pruebas.dto.UserDTO;
+import com.appinicio.pruebas.entity.User;
+import com.appinicio.pruebas.mappers.UserConverter;
+import com.appinicio.pruebas.repository.UserRepository;
 import com.sun.xml.bind.v2.model.core.ID;
 
 @Service
-public class UserService implements UserInterface {
+public class UserServiceImpl implements UserService {
 
+	@Autowired
 	private UserRepository userRepository;
+	@Autowired
+	private UserConverter userConverter;
 	
 	//Método encargado de buscar por el id que le pasemos
-	public List<User> getById(ID id) {
-		return this.userRepository.findById(id);
+	public UserDTO getById(long id) {
+		return convertToDTO(this.userRepository.findById(id).get());
 	}
 	
 	//Método que cuenta todos los registros que tenemos en la tabla
@@ -39,4 +47,7 @@ public class UserService implements UserInterface {
 		return null;
 	}
 	
+	private UserDTO convertToDTO(User usuario) {
+		return userConverter.convert(usuario, UserDTO.class, "userMapper", null);
+	}
 }

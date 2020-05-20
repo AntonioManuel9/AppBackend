@@ -1,6 +1,6 @@
-package com.appinicio.pruebas.user;
+package com.appinicio.pruebas.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,22 +22,22 @@ public class User {
 	@Column(name = "apellidos")
 	private String apellidos;
 	
-	@Column(name = "userEveris")
+	@Column(name = "user_everis")
 	private String userEveris;
 	
-	@Column(name = "userCaixa")
+	@Column(name = "user_caixa")
 	private String userCaixa;
 	
-	@Column(name = "contraseña")
+	@Column(name = "pass")
 	private String contraseña;
 	
-	@Column(name = "fecCreacion")
+	@Column(name = "fec_creacion")
 	private Date fecCreacion;
 	
-	@Column(name = "fecMod")
+	@Column(name = "fec_mod")
 	private Date fecMod;
 	
-	@Column(name = "fecUltAcceso")
+	@Column(name = "fec_ult_acceso")
 	private Date fecUltAcceso;
 	
 	public User() {

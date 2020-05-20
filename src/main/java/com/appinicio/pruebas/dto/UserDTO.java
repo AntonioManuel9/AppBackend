@@ -1,10 +1,14 @@
-package com.appinicio.pruebas.user;
+package com.appinicio.pruebas.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
 public class UserDTO implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private long id;
 	private String nombre;
 	private String apellidos;

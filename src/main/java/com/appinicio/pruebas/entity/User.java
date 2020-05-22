@@ -29,7 +29,7 @@ public class User {
 	private String userCaixa;
 	
 	@Column(name = "pass")
-	private String contraseña;
+	private String pass;
 	
 	@Column(name = "fec_creacion")
 	private Date fecCreacion;
@@ -85,11 +85,11 @@ public class User {
 	}
 
 	public String getContraseña() {
-		return contraseña;
+		return pass;
 	}
 
 	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+		this.pass = contraseña;
 	}
 
 	public Date getFecCreacion() {
